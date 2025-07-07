@@ -1,0 +1,70 @@
+{
+  "audio_duration_ms": 3298.6848072562357,
+  "motor_events": [
+    {
+      "action": "HEAD_TURN_FORWARD",
+      "reason": "SPEECH_START",
+      "timestamp_ms": 0
+    },
+    {
+      "action": "MOUTH_OPEN",
+      "analyzed_word": "Hello",
+      "reason": "VOLUME_ABOVE_THRESHOLD",
+      "timestamp_ms": 29
+    },
+    {
+      "action": "TAIL_FLAP",
+      "analyzed_word": "Hello",
+      "reason": "PEAK_DETECTED",
+      "timestamp_ms": 149
+    },
+    {
+      "action": "TAIL_FLAP",
+      "analyzed_word": "Hello",
+      "reason": "PEAK_DETECTED",
+      "timestamp_ms": 509
+    },
+    {
+      "action": "MOUTH_CLOSE",
+      "analyzed_word": "landlubber",
+      "reason": "VOLUME_BELOW_THRESHOLD",
+      "timestamp_ms": 1289
+    },
+    {
+      "action": "MOUTH_OPEN",
+      "analyzed_word": "landlubber",
+      "reason": "VOLUME_ABOVE_THRESHOLD",
+      "timestamp_ms": 1948
+    },
+    {
+      "action": "TAIL_FLAP",
+      "analyzed_word": "landlubber",
+      "reason": "PEAK_DETECTED",
+      "timestamp_ms": 2038
+    },
+    {
+      "action": "MOUTH_CLOSE",
+      "analyzed_word": "landlubber",
+      "reason": "VOLUME_BELOW_THRESHOLD",
+      "timestamp_ms": 2278
+    },
+    {
+      "action": "MOUTH_OPEN",
+      "analyzed_word": "Blub",
+      "reason": "VOLUME_ABOVE_THRESHOLD",
+      "timestamp_ms": 2488
+    },
+    {
+      "action": "MOUTH_CLOSE",
+      "analyzed_word": "Blub",
+      "reason": "VOLUME_BELOW_THRESHOLD",
+      "timestamp_ms": 2608
+    },
+    {
+      "action": "HEAD_TURN_BACK",
+      "reason": "SPEECH_END",
+      "timestamp_ms": 2758
+    }
+  ],
+  "source_text": "Hello there, landlubber!  Blub blub."
+}

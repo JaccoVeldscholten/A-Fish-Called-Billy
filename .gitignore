@@ -1,0 +1,30 @@
+# ML models
+server/services/sst-whisper/models/*.bin
+server/services/sst-whisper/models/*.model
+server/services/sst-whisper/models/*.pt
+server/services/sst-whisper/models/*.pth
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.bin
+
+# Environment variables

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Service 1: Speech-to-Text
+  sst-whisper:
+    image: ghcr.io/ggml-org/whisper.cpp:main
+    container_name: sst-whisper-service
+    ports: ["5001:8080"]
+    volumes: ["../services/sst-whisper/models:/models"]
+    entrypoint: whisper-server
+    command: >
+      --model /models/ggml-base.bin --host 0.0.0.0 --port 8080
+    restart: unless-stopped
+
+  # Service 2: Text-to-Speech
+  tts-coqui:
+    image: ghcr.io/idiap/coqui-tts-cpu:latest
+    container_name: tts-coqui-service
+    ports: ["5003:5002"]
+    entrypoint: python3
+    # THIS LINE IS THE DEFINITIVE FIX.
+    # We use the 'rdh' model, not the 'common-voice' model.
+    command: >
+      TTS/server/server.py --model_name tts_models/en/vctk/vits
+    restart: unless-stopped
+    depends_on:
+      - sst-whisper
+
+    # Service 3: Audio Analyzer
+  # Service 3: Audio Analyzer
+  audio-analyzer:
+    build:
+      context: ../services/audio-analyzer
+    container_name: audio-analyzer-service
+    ports:
+      - "5004:5004"
+    # We map the output directory to /app/data for safety
+    volumes:
+      - ../shared/output:/app/data
+    restart: unless-stopped
+    depends_on:
+      - tts-coqui # Only start after the TTS service is ready
